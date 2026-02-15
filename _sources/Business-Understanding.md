@@ -1,6 +1,6 @@
 # Business Understanding
 
-1. Latar Belakang
+### 1. Latar Belakang
 
     Di era digital, hampir semua organisasi menghasilkan data dalam jumlah besar setiap hari. Data tersebut bisa berasal dari transaksi penjualan, media sosial, sensor, sistem informasi, dan lain-lain. Namun, data yang banyak tidak otomatis memberikan manfaat jika tidak dianalisis dengan tepat.
 
@@ -19,21 +19,21 @@
     * Virginica
     
     Meskipun Iris biasanya digunakan untuk pembelajaran akademik, konsep Business Understanding tetap berlaku.
-2. Pengertian Business Understanding
+### 2. Pengertian Business Understanding
 
     Business Understanding adalah tahap awal dalam proses data mining yang bertujuan untuk memahami tujuan bisnis, kebutuhan organisasi, serta permasalahan yang ingin diselesaikan sebelum dilakukan analisis data.
 
     Tahap ini merupakan bagian pertama dari metodologi CRISP-DM (Cross Industry Standard Process for Data Mining).
 
     Dalam tahap ini, masalah bisnis diterjemahkan menjadi tujuan teknis data mining agar proses analisis memiliki arah yang jelas.
-3. Tujuan Business Understanding
+### 3. Tujuan Business Understanding
     
     *  Mengidentifikasi masalah bisnis secara jelas.
     *  Menentukan tujuan bisnis yang ingin dicapai.
     * Menerjemahkan tujuan bisnis menjadi tujuan data mining.
     * Menyusun rencana proyek data mining.
     * Mengurangi risiko kegagalan proyek.
-4. Manfaat Business Understanding
+### 4. Manfaat Business Understanding
     * Memberikan arah yang jelas pada proyek data mining.
     * Menghindari kesalahan dalam analisis data.
     * Menghemat waktu dan biaya.

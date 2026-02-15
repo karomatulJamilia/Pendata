@@ -2,19 +2,19 @@
 
 ### 1. Data Understanding
 
-    Data Understanding merupakan tahap awal dalam proses analisis data yang bertujuan untuk memahami karakteristik dataset secara menyeluruh sebelum dilakukan pemodelan. Pada tahap ini, analis tidak langsung membangun model, melainkan terlebih dahulu mempelajari struktur data, jenis variabel, distribusi nilai, serta kondisi kualitas data. Dalam konteks dataset Iris Flower, proses ini dilakukan dengan membaca file dataset (biasanya berformat CSV), kemudian mengidentifikasi jumlah baris dan kolom, tipe data masing-masing atribut, serta hubungan awal antar variabel. Tahap ini sangat penting karena membantu memastikan bahwa data yang digunakan relevan dengan tujuan analisis, serta mengurangi risiko kesalahan interpretasi di tahap berikutnya. Dengan melakukan Data Understanding, analis dapat memperoleh gambaran awal tentang bagaimana pola dalam data terbentuk dan variabel mana yang berpotensi berpengaruh dalam proses klasifikasi.
+Data Understanding merupakan tahap awal dalam proses analisis data yang bertujuan untuk memahami karakteristik dataset secara menyeluruh sebelum dilakukan pemodelan. Pada tahap ini, analis tidak langsung membangun model, melainkan terlebih dahulu mempelajari struktur data, jenis variabel, distribusi nilai, serta kondisi kualitas data. Dalam konteks dataset Iris Flower, proses ini dilakukan dengan membaca file dataset (biasanya berformat CSV), kemudian mengidentifikasi jumlah baris dan kolom, tipe data masing-masing atribut, serta hubungan awal antar variabel. Tahap ini sangat penting karena membantu memastikan bahwa data yang digunakan relevan dengan tujuan analisis, serta mengurangi risiko kesalahan interpretasi di tahap berikutnya. Dengan melakukan Data Understanding, analis dapat memperoleh gambaran awal tentang bagaimana pola dalam data terbentuk dan variabel mana yang berpotensi berpengaruh dalam proses klasifikasi.
 
 ### 2. Sumber Data
 
-    Dataset Iris Flower yang digunakan dalam analisis ini diperoleh dari platform Kaggle, yang merupakan salah satu sumber dataset populer di bidang data science. Kaggle menyediakan berbagai dataset terbuka yang dapat digunakan untuk pembelajaran maupun penelitian. Dataset Iris sendiri merupakan dataset klasik yang pertama kali diperkenalkan oleh Ronald A. Fisher dan hingga kini masih sering digunakan sebagai contoh dalam studi klasifikasi. Data ini tersedia dalam format CSV yang mudah diakses dan diolah menggunakan berbagai perangkat lunak analisis data seperti Python, R, atau Excel. Keunggulan dataset ini adalah strukturnya yang sederhana, jumlah datanya tidak terlalu besar, serta sudah dalam kondisi relatif bersih, sehingga sangat cocok digunakan untuk tahap pembelajaran dasar dalam machine learning.
-    Berikut link dari dataset
-    [Dataset Iris](https://www.kaggle.com/datasets/arshid/iris-flower-dataset?resource=download)
+Dataset Iris Flower yang digunakan dalam analisis ini diperoleh dari platform Kaggle, yang merupakan salah satu sumber dataset populer di bidang data science. Kaggle menyediakan berbagai dataset terbuka yang dapat digunakan untuk pembelajaran maupun penelitian. Dataset Iris sendiri merupakan dataset klasik yang pertama kali diperkenalkan oleh Ronald A. Fisher dan hingga kini masih sering digunakan sebagai contoh dalam studi klasifikasi. Data ini tersedia dalam format CSV yang mudah diakses dan diolah menggunakan berbagai perangkat lunak analisis data seperti Python, R, atau Excel. Keunggulan dataset ini adalah strukturnya yang sederhana, jumlah datanya tidak terlalu besar, serta sudah dalam kondisi relatif bersih, sehingga sangat cocok digunakan untuk tahap pembelajaran dasar dalam machine learning.
+Berikut link dari dataset
+[Dataset Iris](https://www.kaggle.com/datasets/arshid/iris-flower-dataset?resource=download)
 
 ### 3. Deskripsi Dataset
 
 Dataset Iris Flower terdiri dari 150 data observasi dengan 5 atribut utama. Empat atribut pertama merupakan variabel numerik yang berisi hasil pengukuran fisik bunga, yaitu sepal length, sepal width, petal length, dan petal width. Keempat atribut tersebut bertipe numerik karena nilainya berupa angka hasil pengukuran dalam satuan tertentu. Atribut kelima adalah species, yang merupakan variabel kategorikal dan berfungsi sebagai label atau target dalam proses klasifikasi. Dataset ini mencakup tiga spesies bunga iris, yaitu Iris setosa, Iris versicolor, dan Iris virginica, di mana masing-masing spesies memiliki 50 data sehingga distribusinya seimbang. Keseimbangan jumlah data pada setiap kelas ini menjadi nilai tambah karena memudahkan proses pelatihan model klasifikasi tanpa risiko bias akibat ketidakseimbangan data.
 
-### 3. Eksplorasi Dataset
+### 4. Eksplorasi Dataset
 
 Dalam proses mengidentifikasi dataset ini, python membantu untuk mempermudah pengidentifikasiannya.
 

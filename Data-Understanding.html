@@ -383,7 +383,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">2. Sumber Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">3. Deskripsi Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">3. Eksplorasi Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">4. Eksplorasi Dataset</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-file-csv">- Upload file CSV</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">- Struktur Dataset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-awal">-Statistik Deskriptif Awal</a></li>
@@ -413,24 +413,20 @@ document.write(`
 <h1>Data Understanding<a class="headerlink" href="#data-understanding" title="Link to this heading">#</a></h1>
 <section id="id1">
 <h2>1. Data Understanding<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Data Understanding merupakan tahap awal dalam proses analisis data yang bertujuan untuk memahami karakteristik dataset secara menyeluruh sebelum dilakukan pemodelan. Pada tahap ini, analis tidak langsung membangun model, melainkan terlebih dahulu mempelajari struktur data, jenis variabel, distribusi nilai, serta kondisi kualitas data. Dalam konteks dataset Iris Flower, proses ini dilakukan dengan membaca file dataset (biasanya berformat CSV), kemudian mengidentifikasi jumlah baris dan kolom, tipe data masing-masing atribut, serta hubungan awal antar variabel. Tahap ini sangat penting karena membantu memastikan bahwa data yang digunakan relevan dengan tujuan analisis, serta mengurangi risiko kesalahan interpretasi di tahap berikutnya. Dengan melakukan Data Understanding, analis dapat memperoleh gambaran awal tentang bagaimana pola dalam data terbentuk dan variabel mana yang berpotensi berpengaruh dalam proses klasifikasi.
-</pre></div>
-</div>
+<p>Data Understanding merupakan tahap awal dalam proses analisis data yang bertujuan untuk memahami karakteristik dataset secara menyeluruh sebelum dilakukan pemodelan. Pada tahap ini, analis tidak langsung membangun model, melainkan terlebih dahulu mempelajari struktur data, jenis variabel, distribusi nilai, serta kondisi kualitas data. Dalam konteks dataset Iris Flower, proses ini dilakukan dengan membaca file dataset (biasanya berformat CSV), kemudian mengidentifikasi jumlah baris dan kolom, tipe data masing-masing atribut, serta hubungan awal antar variabel. Tahap ini sangat penting karena membantu memastikan bahwa data yang digunakan relevan dengan tujuan analisis, serta mengurangi risiko kesalahan interpretasi di tahap berikutnya. Dengan melakukan Data Understanding, analis dapat memperoleh gambaran awal tentang bagaimana pola dalam data terbentuk dan variabel mana yang berpotensi berpengaruh dalam proses klasifikasi.</p>
 </section>
 <section id="sumber-data">
 <h2>2. Sumber Data<a class="headerlink" href="#sumber-data" title="Link to this heading">#</a></h2>
-<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Dataset Iris Flower yang digunakan dalam analisis ini diperoleh dari platform Kaggle, yang merupakan salah satu sumber dataset populer di bidang data science. Kaggle menyediakan berbagai dataset terbuka yang dapat digunakan untuk pembelajaran maupun penelitian. Dataset Iris sendiri merupakan dataset klasik yang pertama kali diperkenalkan oleh Ronald A. Fisher dan hingga kini masih sering digunakan sebagai contoh dalam studi klasifikasi. Data ini tersedia dalam format CSV yang mudah diakses dan diolah menggunakan berbagai perangkat lunak analisis data seperti Python, R, atau Excel. Keunggulan dataset ini adalah strukturnya yang sederhana, jumlah datanya tidak terlalu besar, serta sudah dalam kondisi relatif bersih, sehingga sangat cocok digunakan untuk tahap pembelajaran dasar dalam machine learning.
+<p>Dataset Iris Flower yang digunakan dalam analisis ini diperoleh dari platform Kaggle, yang merupakan salah satu sumber dataset populer di bidang data science. Kaggle menyediakan berbagai dataset terbuka yang dapat digunakan untuk pembelajaran maupun penelitian. Dataset Iris sendiri merupakan dataset klasik yang pertama kali diperkenalkan oleh Ronald A. Fisher dan hingga kini masih sering digunakan sebagai contoh dalam studi klasifikasi. Data ini tersedia dalam format CSV yang mudah diakses dan diolah menggunakan berbagai perangkat lunak analisis data seperti Python, R, atau Excel. Keunggulan dataset ini adalah strukturnya yang sederhana, jumlah datanya tidak terlalu besar, serta sudah dalam kondisi relatif bersih, sehingga sangat cocok digunakan untuk tahap pembelajaran dasar dalam machine learning.
 Berikut link dari dataset
-[Dataset Iris](https://www.kaggle.com/datasets/arshid/iris-flower-dataset?resource=download)
-</pre></div>
-</div>
+<a class="reference external" href="https://www.kaggle.com/datasets/arshid/iris-flower-dataset?resource=download">Dataset Iris</a></p>
 </section>
 <section id="deskripsi-dataset">
 <h2>3. Deskripsi Dataset<a class="headerlink" href="#deskripsi-dataset" title="Link to this heading">#</a></h2>
 <p>Dataset Iris Flower terdiri dari 150 data observasi dengan 5 atribut utama. Empat atribut pertama merupakan variabel numerik yang berisi hasil pengukuran fisik bunga, yaitu sepal length, sepal width, petal length, dan petal width. Keempat atribut tersebut bertipe numerik karena nilainya berupa angka hasil pengukuran dalam satuan tertentu. Atribut kelima adalah species, yang merupakan variabel kategorikal dan berfungsi sebagai label atau target dalam proses klasifikasi. Dataset ini mencakup tiga spesies bunga iris, yaitu Iris setosa, Iris versicolor, dan Iris virginica, di mana masing-masing spesies memiliki 50 data sehingga distribusinya seimbang. Keseimbangan jumlah data pada setiap kelas ini menjadi nilai tambah karena memudahkan proses pelatihan model klasifikasi tanpa risiko bias akibat ketidakseimbangan data.</p>
 </section>
 <section id="eksplorasi-dataset">
-<h2>3. Eksplorasi Dataset<a class="headerlink" href="#eksplorasi-dataset" title="Link to this heading">#</a></h2>
+<h2>4. Eksplorasi Dataset<a class="headerlink" href="#eksplorasi-dataset" title="Link to this heading">#</a></h2>
 <p>Dalam proses mengidentifikasi dataset ini, python membantu untuk mempermudah pengidentifikasiannya.</p>
 <section id="upload-file-csv">
 <h3>- Upload file CSV<a class="headerlink" href="#upload-file-csv" title="Link to this heading">#</a></h3>
@@ -731,7 +727,7 @@ Menunjukkan jenis bunga iris, yang terdiri dari tiga kategori:</p>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. Data Understanding</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sumber-data">2. Sumber Data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deskripsi-dataset">3. Deskripsi Dataset</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">3. Eksplorasi Dataset</a><ul class="nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#eksplorasi-dataset">4. Eksplorasi Dataset</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#upload-file-csv">- Upload file CSV</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#struktur-dataset">- Struktur Dataset</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#statistik-deskriptif-awal">-Statistik Deskriptif Awal</a></li>

@@ -8,7 +8,7 @@ Check out the content pages bundled with this sample book to see more.
 ```{tableofcontents}
 ```
 
-**BIODATA:**
+
 - Nama : Karomatul Jamilia
 - NIM  : 240411100116
 - Prodi: Teknik Informatika

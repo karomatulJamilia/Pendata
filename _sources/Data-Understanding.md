@@ -1,7 +1,7 @@
 # Data Understanding
-## 1. Data Understanding
 
-### 1.1 Data Understanding
+## 1. Pemahaman Data
+### 1.1 Deskripsi
 
 Data Understanding merupakan tahap awal dalam proses analisis data yang bertujuan untuk memahami karakteristik dataset secara menyeluruh sebelum dilakukan pemodelan. Pada tahap ini, analis tidak langsung membangun model, melainkan terlebih dahulu mempelajari struktur data, jenis variabel, distribusi nilai, serta kondisi kualitas data. Dalam konteks dataset Iris Flower, proses ini dilakukan dengan membaca file dataset (biasanya berformat CSV), kemudian mengidentifikasi jumlah baris dan kolom, tipe data masing-masing atribut, serta hubungan awal antar variabel. Tahap ini sangat penting karena membantu memastikan bahwa data yang digunakan relevan dengan tujuan analisis, serta mengurangi risiko kesalahan interpretasi di tahap berikutnya. Dengan melakukan Data Understanding, analis dapat memperoleh gambaran awal tentang bagaimana pola dalam data terbentuk dan variabel mana yang berpotensi berpengaruh dalam proses klasifikasi.
 

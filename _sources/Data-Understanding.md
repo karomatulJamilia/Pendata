@@ -497,6 +497,7 @@ Berdasarkan uraian mengenai beberapa metode pengukuran jarak di atas, metode yan
 
 Dataset Iris memiliki 4 atribut numerik, sehingga jarak dihitung menggunakan rumus Euclidean distance dengan menjumlahkan kuadrat selisih setiap atribut, kemudian diakarkan.
 1. Perhitungan d(2,1)
+$$
  \[
 d(2,1) = \sqrt{(|4{,}9 - 5{,}1|^2 + |3 - 3{,}5|^2 + |1{,}4 - 1{,}4|^2 + |0{,}2 - 0{,}2|^2)}
 \]
@@ -506,9 +507,11 @@ d(2,1) = \sqrt{(|4{,}9 - 5{,}1|^2 + |3 - 3{,}5|^2 + |1{,}4 - 1{,}4|^2 + |0{,}2 -
 \[
 = 0{,}538
 \]
+$$
 Jadi, tingkat perbedaan karakteristik antara data ke-2 dan data ke-1 adalah sebesar 0,538.
 
 2. Perhitungan d(3,1)
+$$
 \[
 d(3,1) = \sqrt{(|4{,}7 - 5{,}1|^2 + |3{,}2 - 3{,}5|^2 + |1{,}3 - 1{,}4|^2 + |0{,}2 - 0{,}2|^2)}
 \]
@@ -520,7 +523,7 @@ d(3,1) = \sqrt{(|4{,}7 - 5{,}1|^2 + |3{,}2 - 3{,}5|^2 + |1{,}3 - 1{,}4|^2 + |0{,
 \[
 = 0{,}50990
 \]
-
+$$
 #### 5.1.2 Perhitungan Python
 
 ```

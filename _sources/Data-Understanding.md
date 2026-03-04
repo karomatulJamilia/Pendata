@@ -501,9 +501,7 @@ Dataset Iris memiliki 4 atribut numerik, sehingga jarak dihitung menggunakan rum
 $$
 \begin{aligned}
 d(2,1) &= \sqrt{(4{,}9 - 5{,}1)^2 + (3 - 3{,}5)^2 + (1{,}4 - 1{,}4)^2 + (0{,}2 - 0{,}2)^2} \\
-       &= \sqrt{(-0{,}2)^2 + (-0{,}5)^2 + 0^2 + 0^2} \\
-       &= \sqrt{0{,}04 + 0{,}25 + 0 + 0} \\
-       &= \sqrt{0{,}29} \\
+       &= \sqrt{0{,}04 + 0{,}25 } \\
        &= 0{,}538
 \end{aligned}
 $$
@@ -514,9 +512,7 @@ Jadi, tingkat perbedaan karakteristik antara data ke-2 dan data ke-1 adalah sebe
 $$
 \begin{aligned}
 d(3,1) &= \sqrt{(4{,}7 - 5{,}1)^2 + (3{,}2 - 3{,}5)^2 + (1{,}3 - 1{,}4)^2 + (0{,}2 - 0{,}2)^2} \\
-       &= \sqrt{(-0{,}4)^2 + (-0{,}3)^2 + (-0{,}1)^2 + 0^2} \\
        &= \sqrt{0{,}16 + 0{,}09 + 0{,}01 + 0} \\
-       &= \sqrt{0{,}26} \\
        &= 0{,}50990
 \end{aligned}
 $$

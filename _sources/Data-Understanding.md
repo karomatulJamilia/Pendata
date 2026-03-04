@@ -15,11 +15,12 @@ Berikut link dari dataset
 
 Dataset Iris Flower terdiri dari 150 data observasi dengan 5 atribut utama. Empat atribut pertama merupakan variabel numerik yang berisi hasil pengukuran fisik bunga, yaitu sepal length, sepal width, petal length, dan petal width. Keempat atribut tersebut bertipe numerik karena nilainya berupa angka hasil pengukuran dalam satuan tertentu. Atribut kelima adalah species, yang merupakan variabel kategorikal dan berfungsi sebagai label atau target dalam proses klasifikasi. Dataset ini mencakup tiga spesies bunga iris, yaitu Iris setosa, Iris versicolor, dan Iris virginica, di mana masing-masing spesies memiliki 50 data sehingga distribusinya seimbang. Keseimbangan jumlah data pada setiap kelas ini menjadi nilai tambah karena memudahkan proses pelatihan model klasifikasi tanpa risiko bias akibat ketidakseimbangan data.
 
-## 2. Identifikasi dan Struktur Dataset 
+## 2. Proses Pengambilan Dataset Iris Flower dari Berbagai Sumber Data
 
-Dalam proses mengidentifikasi dataset ini, python membantu untuk mempermudah pengidentifikasiannya.
+Pada tahap pengumpulan data (data acquisition), dataset dapat diperoleh dari berbagai sumber dengan format yang berbeda, seperti file CSV maupun sistem manajemen basis data (DBMS) seperti MySQL dan PostgreSQL. Dataset ini diambil dari tiga sumber berbeda, yaitu file CSV, MySQL, dan PostgreSQL.
 
-### 2.1 Upload file CSV
+
+### 2.1 Pengambilan Data dari File CSV
 
 ```
 from google.colab import files
@@ -28,7 +29,7 @@ files.upload()
 
 Proses upload file CSV dilakukan untuk memasukkan dataset ke dalam lingkungan Google Colaboratory agar dapat diproses menggunakan bahasa pemrograman Python. Dataset diunggah secara manual dari perangkat pengguna menggunakan fungsi files.upload() yang disediakan oleh Google Colab.
 
-### 2.2 Membaca Dataset
+#### Membaca Dataset
 
 ```
 import pandas as pd
@@ -64,7 +65,78 @@ Menunjukkan jenis bunga iris, yang terdiri dari tiga kategori:
     - Setosa
     - Versicolor
     - Virginica
+### 2.2  Pengambilan Data dari MySQL
+MySQL merupakan sistem manajemen basis data relasional yang digunakan untuk menyimpan data dalam bentuk tabel.
 
+Proses pengambilan data dari MySQL dilakukan dengan:
+1. Menghubungkan Python ke database MySQL
+2. Menjalankan perintah SQL (SELECT)
+3. Mengambil hasil query ke dalam DataFrame
+
+CODE
+```
+import mysql.connector
+
+# Membuat koneksi
+db = mysql.connector.connect(
+    host="localhost",
+    user="root",
+    password="",   # isi sesuai password MySQL kamu
+    database="iris"
+)
+
+print("Berhasil terhubung ke MySQL!")
+
+# Membuat cursor
+cursor = db.cursor()
+
+# Contoh query
+cursor.execute("SELECT * FROM iris")
+
+# Ambil hasil
+hasil = cursor.fetchall()
+
+for data in hasil:
+    print(data)
+
+# Tutup koneksi
+db.close()
+```
+Pada proses ini, data tidak diambil dari file, melainkan langsung dari tabel database menggunakan perintah SQL.
+### 2.3 Pengambilan Data dari PostgreSQL
+PostgreSQL juga merupakan sistem manajemen basis data relasional yang memiliki struktur tabel seperti MySQL.
+
+Langkah pengambilan data hampir sama:
+1. Dataset Iris dimasukkan ke tabel iris pada PostgreSQL
+2. Python melakukan koneksi menggunakan library psycopg2
+3. Query dijalankan untuk mengambil data
+   
+CODE
+```
+import psycopg2
+
+conn = psycopg2.connect(
+    host="localhost",
+    database="iris-flower",
+    user="postgres",
+    password="",
+    port="5432"
+)
+
+print("Berhasil connect ke PostgreSQL")
+
+cursor = conn.cursor()
+
+cursor.execute("SELECT * FROM public.iris")
+
+rows = cursor.fetchall()
+
+for row in rows:
+    print(row)
+
+cursor.close()
+conn.close()
+```
 ## 3. Eksplorasi Data Menggunakan Python
 ### 3.1 Pengecekan Kualitas Data
 #### 3.3.1  Missing Value
@@ -353,3 +425,271 @@ Berdasarkan hasil yang diperoleh, fitur petal_length dan petal_width memiliki ko
 
 Hasil ini konsisten dengan perhitungan korelasi menggunakan Python (df.corr()), sehingga dapat disimpulkan bahwa kedua tools menghasilkan analisis yang selaras dan saling mendukung.
 
+## 5. Pengukuran Jarak Pada Dataset Iris Flower
+
+### 1. Similarity
+
+Similarity (kemiripan) dalam penambangan data adalah ukuran yang digunakan untuk mengukur secara numerik tingkat kesamaan antara dua objek data berdasarkan atribut-atribut yang dimilikinya. Nilai similarity menunjukkan seberapa mirip dua objek tersebut dalam suatu dataset.
+
+Similarity biasanya dinyatakan dalam bentuk nilai dengan rentang (range) antara 0 sampai 1:
+
+- Nilai 0 → menunjukkan bahwa dua objek sangat berbeda atau tidak memiliki kesamaan.
+
+- Nilai 1 → menunjukkan bahwa dua objek sangat mirip atau identik.
+
+- Semakin tinggi nilai similarity, maka semakin mirip kedua objek tersebut.
+
+Dengan demikian, similarity memberikan gambaran kuantitatif mengenai tingkat kemiripan antar data dalam bentuk angka yang dapat dihitung dan dianalisis secara matematis.
+
+### 2. Dissimilarity
+
+Dissimilarity adalah ukuran numerik dari perbedaan antara dua objek data berdasarkan atribut-atribut yang dimilikinya. Nilai dissimilarity digunakan untuk menunjukkan seberapa besar tingkat ketidaksamaan atau perbedaan antar objek dalam suatu dataset.
+
+Dissimilarity menggambarkan jarak atau perbedaan secara kuantitatif, sehingga dapat dihitung dan dianalisis menggunakan metode matematis.
+
+Secara umum, interpretasi nilai dissimilarity adalah sebagai berikut:
+
+- Nilai dissimilarity akan sangat rendah apabila dua objek semakin mirip.
+- Nilai dissimilarity akan semakin besar apabila dua objek semakin berbeda.
+- Nilai minimum dissimilarity adalah 0, yang menunjukkan bahwa dua objek identik atau tidak memiliki perbedaan sama sekali.
+
+Dalam beberapa metode, nilai dissimilarity dapat berada dalam rentang tertentu, misalnya [0,1], namun pada metode lain seperti Euclidean Distance, nilainya dapat lebih dari 1 tergantung pada skala data.
+
+#### Manhattan Distance
+
+Manhattan Distance adalah metode pengukuran jarak yang digunakan untuk menghitung tingkat perbedaan (dissimilarity) antara dua objek dengan menjumlahkan selisih absolut dari setiap atributnya.
+Metode ini menghitung jarak berdasarkan jalur horizontal dan vertikal (seperti pola jalan berbentuk grid), bukan garis lurus. Semakin besar nilai Manhattan Distance, maka semakin besar perbedaan antar objek. Nilai minimum jaraknya adalah 0, yang menunjukkan bahwa dua objek identik.
+
+- Rumus:
+
+$d(i,j) = {|x_{i1} - x_{j1}|+| x_{i2} - x_{j2}|^2 + \ldots + |x_{ip} - x_{jp}|}$
+
+
+#### Eucledien Distance
+
+Euclidean Distance merupakan salah satu metode pengukuran jarak yang termasuk dalam kategori dissimilarity, karena metode ini mengukur tingkat perbedaan antara dua objek berdasarkan nilai atribut numeriknya. Semakin besar hasil perhitungan Euclidean Distance, maka semakin besar perbedaan (dissimilarity) antara dua objek tersebut. Sebaliknya, jika hasilnya mendekati 0, maka kedua objek semakin mirip.
+
+- Rumus:
+
+$d(i,j) = \sqrt{(x_{i1} - x_{j1}|^2 +| x_{i2} - x_{j2}|^2 + \ldots + |x_{ip} - x_{jp}|^2})$
+
+#### Minkowski Distance
+
+Minkowski Distance adalah bentuk umum dari pengukuran jarak dalam ruang berdimensi. Rumusnya:
+
+$d(i,j) = \sqrt[h]{x_{i1} - x_{j1}|^h +| x_{i2} - x_{j2}|^h + \ldots + |x_{ip} - x_{jp}|^h}$
+
+Keterangan:
+
+𝑥𝑖 dan 𝑦𝑖 = nilai atribut ke-i
+
+𝑝 = parameter yang menentukan jenis jarak
+
+𝑛 = jumlah atribut
+
+Minkowski disebut sebagai bentuk umum karena ketika nilai p diubah, maka akan menghasilkan metode jarak yang berbeda.
+
+
+Berdasarkan uraian mengenai beberapa metode pengukuran jarak di atas, metode yang digunakan dalam penelitian ini adalah Euclidean Distance. Metode ini dipilih karena efektif untuk data numerik, memiliki konsep perhitungan yang sederhana, serta sesuai dengan karakteristik dataset yang dianalisis. Dengan menggunakan Euclidean Distance, perbedaan antar objek dapat diukur secara langsung berdasarkan nilai atributnya, sehingga hasil analisis menjadi lebih jelas dan mudah diinterpretasikan.
+### 5.1 Perhitungan jarak pada dataset iris
+#### 5.1.1 Perhitungan Manual
+ Perhitungan berikut merupakan pengukuran jarak pada dataset Iris menggunakan metode Euclidean distance.
+
+Dataset Iris memiliki 4 atribut numerik, sehingga jarak dihitung menggunakan rumus Euclidean distance dengan menjumlahkan kuadrat selisih setiap atribut, kemudian diakarkan.
+1. Perhitungan d(2,1)
+ \[
+d(2,1) = \sqrt{(|4{,}9 - 5{,}1|^2 + |3 - 3{,}5|^2 + |1{,}4 - 1{,}4|^2 + |0{,}2 - 0{,}2|^2)}
+\]
+\[
+= \sqrt{0{,}04 + 0{,}25}
+\]
+\[
+= 0{,}538
+\]
+Jadi, tingkat perbedaan karakteristik antara data ke-2 dan data ke-1 adalah sebesar 0,538.
+
+2. Perhitungan d(3,1)
+\[
+d(3,1) = \sqrt{(|4{,}7 - 5{,}1|^2 + |3{,}2 - 3{,}5|^2 + |1{,}3 - 1{,}4|^2 + |0{,}2 - 0{,}2|^2)}
+\]
+
+\[
+= \sqrt{0{,}16 + 0{,}09 + 0{,}01 + 0}
+\]
+
+\[
+= 0{,}50990
+\]
+
+#### 5.1.2 Perhitungan Python
+
+```
+from scipy.spatial.distance import pdist, squareform
+
+X = df.select_dtypes(include=['float64', 'int64'])
+dist = pdist(X, metric='euclidean')
+distance_matrix = squareform(dist)
+
+distance_df = pd.DataFrame(distance_matrix)
+print(distance_df.iloc[:5, :5])
+```
+Terdapat tambahan library yang digunakan yaitu library scipy untuk mempermudah kita menghitung Euclidean Distance tanpa perlu coding manual. Selanjutnya data ditampilkan hanya sebesar 5x5 dihitung dari yang pertama
+
+Output yang dihasilkan:
+|   | 0        | 1        | 2        | 3        | 4        |
+|---|----------|----------|----------|----------|----------|
+| 0 | 0.000000 | 0.538516 | 0.509902 | 0.648074 | 0.141421 |
+| 1 | 0.538516 | 0.000000 | 0.300000 | 0.331662 | 0.608276 |
+| 2 | 0.509902 | 0.300000 | 0.000000 | 0.244949 | 0.509902 |
+| 3 | 0.648074 | 0.331662 | 0.244949 | 0.000000 | 0.648074 |
+| 4 | 0.141421 | 0.608276 | 0.509902 | 0.648074 | 0.000000 |
+
+#### 5.1.3 Perhitungan Orange
+
+![original image](https://cdn.mathpix.com/snip/images/9PGgc7ny0uksXf9OeJWUUqJ1W74_wYqqPmGLGPGhBL8.original.fullsize.png)
+
+3 perhitungan diatas, memiliki kesamaan nilai, artinya perhitungan yang dilakukan sudah dilakukan secara benar dan urut
+
+### 5.2 Perhitungan pada data campuran
+
+Dataset yang digunakan untuk contoh kali ini adalah dataset berjudu; 'Student Alcohol Consumption'. Dimana dataset ini memiliki sekitar 30 fitur di dalam nya. Namun pada penugasan kali ini, kami menggunakan hanya 7 fitur diantaranya yaitu fitur sex, age, Medu, Fedu, Fjob, activities, schoolsup. Dimana tipe data Nominal dimiliki oleh [sex, fjob, activities, schoolsup] lalu tipe data numerik [Age] terakhir adalah tipe data ordinal [medu, fedu]. Dilakukan perhitungan jarak dengan metode Gower
+
+#### 5.2.1 Perhitungan manual
+Contoh perhitungan manual antara baris 1 dan 2, lalu baris 1 dan 4:
+
+1. Hitung Nominal pada baris 1 dan 2
+
+Jika nilai nya sama -> 0
+Jika nilai nya beda -> 1
+
+
+| Fitur | Nilai |
+| :-- | :-- |
+| sex | 0 |
+| fjob | 1 |
+| activities | 0 |
+| schoolsup | 1 |
+
+Hasil akhir = 0+1+0+1 = 2
+
+2. Hitung Numerik pada baris 1 dan 2
+
+Nilai numerik berada pada fitur Age
+Nilai minimal = 15
+Nilai maksimal = 22
+rumusnya:
+
+$$
+d_{ij}^{(f)} =
+\frac{|x_{if} - x_{jf}|}{\max(x_f) - \min(x_f)}
+$$
+
+$$
+d_{1,2}^{(f)} =
+\frac{|18 - 17|}{22 - 15}
+$$
+
+$$
+= \frac{1}{7} = 0,143
+$$
+
+Hasil akhir = 0,143
+
+3. Hitung Ordinal pada baris 1 dan 2
+Ketahui terlebih dahulu terdapat kategori apa saja di dalam nya. Pada kasus ini terdapat 5 kategori
+Rumusnya:
+
+$$
+z_{if} = \frac{r_{if} - \min(r_f)}{\max(r_f) - \min(r_f)}
+$$
+
+Hitung dari data baris 1:
+
+$$
+z_{1} = \frac{4 - 0}{4 - 0}
+$$
+
+$$
+= \frac{4}{4} = 1
+$$
+
+Hitung dari data baris 2:
+
+$$
+z_{1} = \frac{1 - 0}{4 - 0}
+$$
+
+$$
+= \frac{1}{4} = 0,25
+$$
+
+Hasil akhir: |1 - 0.25| = 0.75
+
+Lakukan hal yang sama untuk tipe data fedu
+Hasil akhir: 0,75
+
+4.  Hasil Akhir nilai gower baris 1 dan 2
+Nilai dari tipe data sebelumnya dijumlahkan, lalu dibagi oleh fitur yang dimiliki
+
+$$
+= \frac{2 + 0,143 + 0,75 + 0,75}{7} = 0,520
+$$
+
+#### 5.2.1 Perhitungan Python
+```
+import numpy as np
+
+data = df.copy()
+n = data.shape[0]
+
+numeric_cols = data.select_dtypes(include=[np.number]).columns
+categorical_cols = data.select_dtypes(exclude=[np.number]).columns
+
+for col in numeric_cols:
+   min_val = data[col].min()
+   max_val = data[col].max()
+   
+   if max_val != min_val:
+       data[col] = (data[col] - min_val) / (max_val - min_val)
+   else:
+       data[col] = 0
+
+dist_matrix = np.zeros((n, n))
+
+for i in range(n):
+   for j in range(n):
+       total_dist = 0
+       valid_features = 0
+       
+       for col in data.columns:
+           xi = data.iloc[i][col]
+           xj = data.iloc[j][col]
+           
+           if pd.isna(xi) or pd.isna(xj):
+               continue
+           
+           if col in numeric_cols:
+               d = abs(xi - xj)
+
+           else:
+               d = 0 if xi == xj else 1
+           
+           total_dist += d
+           valid_features += 1
+       
+       dist_matrix[i, j] = total_dist / valid_features
+distance_df = pd.DataFrame(dist_matrix)
+
+print(distance_df.iloc[:5, :5])
+```
+
+Berikut adalah code yang digunakan untuk menghitung gower distance
+
+
+|  | 0 | 1 | 2 | 3 | 4 |
+| :-- | :-- | :-- | :-- | :-- | :-- |
+| 0 | 0.000000 | 0.520408 | 0.418367 | 0.561224 | 0.397959 |
+| 1 | 0.520408 | 0.000000 | 0.183673 | 0.469388 | 0.163265 |
+| 2 | 0.418367 | 0.183673 | 0.000000 | 0.571429 | 0.306122 |
+| 3 | 0.561224 | 0.469388 | 0.571429 | 0.000000 | 0.377551 |
+| 4 | 0.397959 | 0.163265 | 0.306122 | 0.377551 | 0.000000 |

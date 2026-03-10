@@ -1256,13 +1256,21 @@ Untuk menghitung jarak pada data campuran, kita perlu menghitungnya pada masing-
     * Bachelor's degree  =  5
     * Master's degree    =  6
    #### Proses Normalisasi pada tiap tingkatan:
+
     Normalisasi = r - min / max - min
+
     1 = 1-1 / 6-1 = 0/5 = 0
+
     2 = 2-1 / 6-1 = 1/5 = 0,2
+
     3 = 3-1 / 6-1 = 2/5 = 0,4
+
     4 = 4-1 / 6-1 = 3/5 = 0,6
+
     5 = 5-1 / 6-1 = 4/5 = 0,8
+
     6 = 6-1 / 6-1 = 5/5 = 1
+
     Setelah dilakukan normalisasi pada tipe data ordinal, selanjutnya ada proses perhitungan menggunakan metode Eucledien Distance, yang dihitung dengan tipe data numerik yaitu pada kolom Math Score, Reading Score dan Writing Score.
    
 
@@ -1296,46 +1304,53 @@ Jadi jarak pada tipe data ordinal dan numerik pada d(1,2) =  23.00086 dan pada d
    Perhitungan jarak pada tipe data biner kita perlu menentukan simetris dan asimetrisnya terlebih dahulu, karena untuk perhitungan jarak yang simteris dan asimetris berbeda. Pada data campuran yang sekarang kita pake untuk yang tipe binary ada 3 fitur yaitu fitur gender yang simetris, lunch dan test preparation course yang asimetris.
    1. d(1,2)
       #### Simetris :
-      q = 0
-      r = 0
-      s = 0
-      t = 1
+      * q = 0
+      * r = 0
+      * s = 0
+      * t = 1
        $\frac{r+s}{q+r+s+t} = \frac{0+0}{0+0+0+1} = 0$
       #### Asimetris :
-      q = 1
-      r = 0
-      s = 1
-      t = 0
+      * q = 1
+      * r = 0
+      * s = 1
+      * t = 0
       $\frac{r+s}{q+r+s} = \frac{0+1}{1+0+1} = 0.5$
+      
       d(1,2) = 0 + 0.5 = 0.5
 
    3. d(1,3) :
        #### Simetris :
-        q = 0
-        r = 0
-        s = 0
-        t = 1
+        * q = 0
+        * r = 0
+        * s = 0
+        * t = 1
 
         $\frac{r+s}{q+r+s+t} = \frac{0+0}{0+0+0+1} = 0$
 
 
         #### Asimetris
-      q = 1
-      r = 0
-      s = 0
-      t = 1
+      * q = 1
+      * r = 0
+      * s = 0
+      * t = 1
 
       $\frac{r+s}{q+r+s} = \frac{0+0}{1+0+0} = 0$
+
       d(1,3) = 0 + 0 = 0
 
       Jadi, jarak pada tipe data binary pada d(1,2) = 0.5 dan d(1,3) = 0.
       
 3. Kategori
    Pada tipe data kategori menggunakan rumus p-m/p, dimana p adalah banyaknya fitur dan m adalah jumlah kategori apabila antara kategori data ke-1 dan ke-2 sama maka satu, dan apabila berbeda maka 0.
+
    d(1,2) = 1-0/1 = 1/1 = 1
+
    d(1,3) = 1-1/1 = 0/1 = 0
+
    Jadi, jarak tipe data kategori pada d(1,2) = 1 dan d(1,3) = 0
 
 Untuk menentukan hasil akhirnya, yaitu jarak  d(1,2) dan d(1,3) adalah dengan menjumlahkan hasil hitung jarak dari masing-masing tipe data di atas.
+
 d(1,2) = 23,00086 + 0,5 + 1 = 24,50086
+
 d(1,3) = 34,844 + 0 + 0 = 34,844.

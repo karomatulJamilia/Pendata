@@ -1,5 +1,3 @@
-# Missing Values Inputation &  Materi Normalisasi data
-
 ## 1. Missing Value Imputation dengan WKNN
 
 Dalam proses pengolahan data, sering ditemukan data yang tidak lengkap atau *missing value*. Missing value dapat mempengaruhi hasil analisis karena informasi yang dibutuhkan tidak tersedia secara lengkap. Oleh karena itu diperlukan metode untuk mengisi nilai yang hilang tersebut.

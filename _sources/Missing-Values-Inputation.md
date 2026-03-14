@@ -113,12 +113,10 @@ $$
 x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
 $$
 
-
-\begin{tabular}{|l|l|l|l|l|l|l|l|l|l|l|l|}
-\hline Min = & 0.00632 & 2.18 & 0.458 & 6.421 & 45.8 & 4.09 & 222 & 15.3 & 392.83 & 2.94 & 21.6 \\
-\hline Max= & 0.06905 & 7.07 & 0.538 & 7.185 & 78.9 & 6.0622 & 296 & 18.7 & 396.9 & 9.14 & 36.2 \\
-\hline
-\end{tabular}
+|        | CRIM | INDUS | NOX | RM | AGE | DIS | TAX | PTRATIO | B | LSTAT | MEDV |
+|--------|------|------|------|------|------|------|------|------|------|------|------|
+| Min | 0.00632 | 2.18 | 0.458 | 6.421 | 45.8 | 4.09 | 222 | 15.3 | 392.83 | 2.94 | 21.6 |
+| Max | 0.06905 | 7.07 | 0.538 | 7.185 | 78.9 | 6.0622 | 296 | 18.7 | 396.9 | 9.14 | 36.2 |
 
 Table dengan nilai yang sudah dinormalisasi:
 ![original image](https://cdn.mathpix.com/snip/images/UvuF5Ik6z5AOPY_A853praI5dIYgojz-JdF5edkKu9I.original.fullsize.png)

@@ -186,7 +186,7 @@
 <li class="toctree-l1"><a class="reference internal" href="Data-Preparation.html">Data Preparation</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Modelling.html">Modelling</a></li>
 <li class="toctree-l1"><a class="reference internal" href="Deployment.html">Deployment</a></li>
-<li class="toctree-l1 current active"><a class="current reference internal" href="#">Missing Values Imputation</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">1. Missing Value Imputation dengan WKNN</a></li>
 
 </ul>
 
@@ -1045,10 +1045,11 @@ S_i \times Y_{jh}
 <section id="minmax-normalization">
 <h3>1. MinMax Normalization<a class="headerlink" href="#minmax-normalization" title="Link to this heading">#</a></h3>
 <p>Min-Max Normalization adalah metode normalisasi yang mengubah nilai data ke dalam rentang tertentu, biasanya antara 0 hingga 1.</p>
-<p>Rumus Min-Max Normalization:
-$<span class="math notranslate nohighlight">\(
+<p>Rumus Min-Max Normalization:</p>
+<div class="math notranslate nohighlight">
+\[
 x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
-\)</span>$</p>
+\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}
@@ -1117,10 +1118,11 @@ x' = 0.201
 <section id="z-score-normalization">
 <h3>2. Z-Score Normalization<a class="headerlink" href="#z-score-normalization" title="Link to this heading">#</a></h3>
 <p>Z-Score Normalization atau standardization adalah metode normalisasi yang menggunakan nilai rata-rata (mean) dan standar deviasi dari data.
-Rumus Z-Score Normalization:
-$<span class="math notranslate nohighlight">\(
+Rumus Z-Score Normalization:</p>
+<div class="math notranslate nohighlight">
+\[
 x' = \frac{x - \mu}{\sigma}
-\)</span>$</p>
+\]</div>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{aligned}

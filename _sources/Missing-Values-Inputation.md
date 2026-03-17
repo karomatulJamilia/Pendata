@@ -398,6 +398,7 @@ Tujuan normalisasi data adalah untuk menghindari dominasi nilai dari suatu varia
 Min-Max Normalization adalah metode normalisasi yang mengubah nilai data ke dalam rentang tertentu, biasanya antara 0 hingga 1.
 
 Rumus Min-Max Normalization:
+
 $$
 x' = \frac{x - x_{\min}}{x_{\max} - x_{\min}}
 $$
@@ -450,6 +451,7 @@ Hasil normalisasi:
 #### 2. Z-Score Normalization
 Z-Score Normalization atau standardization adalah metode normalisasi yang menggunakan nilai rata-rata (mean) dan standar deviasi dari data.
 Rumus Z-Score Normalization:
+
 $$
 x' = \frac{x - \mu}{\sigma}
 $$
